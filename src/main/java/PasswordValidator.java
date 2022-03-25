@@ -1,5 +1,10 @@
 public class PasswordValidator {
 
+    public static void main(String[] args) {
+
+
+    }
+
     public static boolean isLengthOK(String password) {
 
         return password.length() > 7;
@@ -15,5 +20,9 @@ public class PasswordValidator {
            }
         }
         return false;
+    }
+
+    public static boolean isValid(String password) {
+        return (isLengthOK(password) && hasNumbers(password));
     }
 }

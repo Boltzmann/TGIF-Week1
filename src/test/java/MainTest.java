@@ -24,4 +24,14 @@ public class MainTest {
         assertFalse(PasswordValidator.hasNumbers("PasswortXY"));
     }
 
+    @Test
+    void checkIfPasswordIsValid_whenYes_shouldTrue() {
+        assertTrue(PasswordValidator.isValid("Passwort13"));
+    }
+
+    @Test
+    void checkIfPasswordIsValid_whenNoNumber_shouldFalse() {
+        assertFalse(PasswordValidator.isValid("Passwortabc"));
+    }
+
 }
