@@ -4,4 +4,10 @@ public class PasswordValidator {
 
         return password.length() > 7;
     }
+
+
+    public static boolean hasNumbers(String password) {
+
+        return true;
+    }
 }

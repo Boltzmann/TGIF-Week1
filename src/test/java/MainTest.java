@@ -9,7 +9,12 @@ public class MainTest {
     }
 
     @Test
-    void passwordLengthCheck_whenLessThen8_shouldFalse_Test(){
+    void passwordLengthCheck_whenLessThan8_shouldFalse_Test(){
         assertFalse(PasswordValidator.isLengthOK("1234"));
+    }
+
+    @Test
+    void checkIfContainsNumbers_whenNumbers_shouldTrue(){
+        assertTrue(PasswordValidator.hasNumbers("Pass1234"));
     }
 }
