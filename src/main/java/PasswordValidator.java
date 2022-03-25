@@ -1,6 +1,7 @@
 public class PasswordValidator {
 
-    public static boolean isLengthOK(String passwort) {
-        return true;
+    public static boolean isLengthOK(String password) {
+
+        return password.length() > 7;
     }
 }

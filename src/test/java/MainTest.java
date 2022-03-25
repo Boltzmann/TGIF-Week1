@@ -3,7 +3,13 @@ import org.junit.jupiter.api.Test;
 
 public class MainTest {
     @Test
-    void passwordLengthCheck_exp8_shouldTrue_Test() {
+    void passwordLengthCheck_when8_shouldTrue_Test() {
+
         assertTrue(PasswordValidator.isLengthOK("Passwort"));
+    }
+
+    @Test
+    void passwordLengthCheck_whenLessThen8_shouldFalse_Test(){
+        assertFalse(PasswordValidator.isLengthOK("1234"));
     }
 }
