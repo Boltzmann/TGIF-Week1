@@ -34,4 +34,19 @@ public class MainTest {
         assertFalse(PasswordValidator.isValid("Passwortabc"));
     }
 
+    @Test
+    void checkIfLowerCaseContained_whenLowerCaseContained_shouldTrue() {
+        assertTrue(PasswordValidator.containsLowerCase("Pass123"));
+    }
+
+    @Test
+    void checkIfLowerCaseContained_whenLowerCaseNotContained_shouldFalse() {
+        assertFalse(PasswordValidator.containsLowerCase("PASS123"));
+    }
+
+    @Test
+    void checkIsValidForLowerCase_whenLowerCaseNotContained_shouldFalse() {
+        assertFalse(PasswordValidator.isValid("PASSSS123"));
+    }
+    
 }
