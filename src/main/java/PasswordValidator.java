@@ -15,9 +15,9 @@ public class PasswordValidator {
 
         char[] pass = password.toCharArray();            // {'T', 'e', 's', 't', '2', '8', '9', '3', '7'}
         for (int i = 0; i < password.length(); i++) {    // i = 0   bis  i = 4
-           if ('0' <= pass[i] && pass[i] <= '9') {       // nicht erfüllt, dann i++  --> wenn erfüllt, dann Ende der Methode
-               return true;
-           }
+            if ('0' <= pass[i] && pass[i] <= '9') {       // nicht erfüllt, dann i++  --> wenn erfüllt, dann Ende der Methode
+                return true;
+            }
         }
         return false;
     }
@@ -45,5 +45,16 @@ public class PasswordValidator {
             }
         }
         return false;
+    }
+
+    public static boolean securePassword(String password) {
+        String[] badPass = new String[]{"Passwort1234", "Geheim12345", "Passwort1", "TopSecret123", "Qwerty1234"};
+        for (int i = 0; i < badPass.length; i++) {
+            if (password == badPass[i]) {
+                return false;
+            }
+
+        }
+        return true;
     }
 }

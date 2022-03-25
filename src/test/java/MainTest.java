@@ -63,4 +63,14 @@ public class MainTest {
     void checkIsValidForUpperCase_whenUpperCaseNotContained_shouldFalse() {
         assertFalse(PasswordValidator.isValid("passsss123"));
     }
+
+    @Test
+    void checkIfBadPassword_whenNotBad_ShouldTrue(){
+        assertTrue(PasswordValidator.securePassword("5up3rGeHe1M"));
+    }
+
+    @Test
+    void checkIfBadPassword_whenBad_ShouldFalse(){
+        assertFalse(PasswordValidator.securePassword("Passwort1234"));
+    }
 }
