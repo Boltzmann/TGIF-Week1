@@ -25,12 +25,22 @@ public class PasswordValidator {
     public static boolean isValid(String password) {
         return (isLengthOK(password)
                 && hasNumbers(password)
-                && containsLowerCase(password));
+                && containsLowerCase(password)
+                && containsUpperCase(password));
     }
 
     public static boolean containsLowerCase(String password) {
         for (int i = 0; i < password.length(); i++) {
             if (Character.isLowerCase(password.charAt(i))) { // p.charAt() ->
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean containsUpperCase(String password) {
+        for (int i = 0; i < password.length(); i++) {
+            if (Character.isUpperCase(password.charAt(i))) { // p.charAt() ->
                 return true;
             }
         }
