@@ -73,4 +73,10 @@ public class MainTest {
     void checkIfBadPassword_whenBad_ShouldFalse(){
         assertFalse(PasswordValidator.securePassword("Passwort1234"));
     }
+
+    @Test
+    void checkIsValidRespectiveToBadPassword_whenBad_shouldFalse() {
+        assertFalse(PasswordValidator.isValid("Qwerty1234"));
+        assertFalse(PasswordValidator.isValid("TopSecret123"));
+    }
 }
