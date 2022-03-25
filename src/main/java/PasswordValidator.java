@@ -6,8 +6,14 @@ public class PasswordValidator {
     }
 
 
-    public static boolean hasNumbers(String password) {
+    public static boolean hasNumbers(String password) {  // Test28937
 
-        return true;
+        char[] pass = password.toCharArray();            // {'T', 'e', 's', 't', '2', '8', '9', '3', '7'}
+        for (int i = 0; i < password.length(); i++) {    // i = 0   bis  i = 4
+           if ('0' <= pass[i] && pass[i] <= '9') {       // nicht erfüllt, dann i++  --> wenn erfüllt, dann Ende der Methode
+               return true;
+           }
+        }
+        return false;
     }
 }

@@ -1,4 +1,5 @@
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 
 public class MainTest {
@@ -9,12 +10,18 @@ public class MainTest {
     }
 
     @Test
-    void passwordLengthCheck_whenLessThan8_shouldFalse_Test(){
+    void passwordLengthCheck_whenLessThan8_shouldFalse_Test() {
         assertFalse(PasswordValidator.isLengthOK("1234"));
     }
 
     @Test
-    void checkIfContainsNumbers_whenNumbers_shouldTrue(){
+    void checkIfContainsNumbers_whenNumbers_shouldTrue() {
         assertTrue(PasswordValidator.hasNumbers("Pass1234"));
     }
+
+    @Test
+    void checkIfContainsNumbers_whenNoNumbers_shouldFalse() {
+        assertFalse(PasswordValidator.hasNumbers("PasswortXY"));
+    }
+
 }
