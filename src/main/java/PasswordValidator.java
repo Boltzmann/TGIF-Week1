@@ -4,12 +4,14 @@ public class PasswordValidator {
 
     public static void main(String[] args) {
 
-        String password = "";
-        while(!isValid(password)) {
-            Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        boolean passwordGood = false;
+
+        while(!passwordGood) {
             System.out.println("Geben Sie hier ein gültiges Passwort ein und drücken Sie ENTER.\n" +
                     "Das Passwort muss aus mindestens 8 Zeichen bestehen und sowohl mindestens eine Zahl als auch Groß- und Kleinbuchstaben beinhalten:");
-            password = scanner.nextLine();
+            String password = scanner.nextLine();
+            passwordGood = isValid(password);
         }
     }
 
